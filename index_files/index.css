@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 100vh;
+}
+
+.tap-inner {
+  width: 300px;
+  height: 350px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+input[name=coffee] {
+  display: none;
+}
+.content {
+  left: -30px;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: 1s;
+}
+.btn {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+.btn label {
+  margin-left: 5px;
+  border-radius: 50%;
+  background-color: lightgray;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[id=coffee1]:checked ~ .slide1,
+input[id=coffee2]:checked ~ .slide2,
+input[id=coffee3]:checked ~ .slide3 {
+  opacity: 1;
+  visibility: visible;
+  left: 0;
+}
+
+input[id=coffee1]:checked ~ .btn label[for=coffee1],
+input[id=coffee2]:checked ~ .btn label[for=coffee2],
+input[id=coffee3]:checked ~ .btn label[for=coffee3] {
+  background-color: crimson;
+}
+
+.heading {
+  
+}
+.text1,
+.text2,
+.text3 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 15px;
+  box-sizing: border-box;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: 1s;
+}
+
+.text1 span,
+.text2 span,
+.text3 span {
+  font-size: 20px;
+  display: block;  
+}
+
+.text2 {
+  background-color: dodgerblue;
+}
+.text3 {
+  background-color: yellowgreen;
+}
+
+input[id=coffee1]:checked ~ .heading .text1,
+input[id=coffee2]:checked ~ .heading .text2,
+input[id=coffee3]:checked ~ .heading .text3 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
